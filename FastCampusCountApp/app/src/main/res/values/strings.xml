@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FastCampusCountApp</string>
+    <string name="btn_reset">초기화</string>
+</resources>
