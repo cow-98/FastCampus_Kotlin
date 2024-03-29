@@ -40,13 +40,13 @@ class MainActivity : AppCompatActivity() {
         btn.setOnClickListener{
             change = !change
             if(change){
-                m.text = "cm"
-                cm.text = "m"
+                m.text = "m"
+                cm.text = "cm"
                 mainText.text = inputNumber.times(0.01).toString()
 
             } else {
-                m.text = "m"
-                cm.text = "cm"
+                m.text = "cm"
+                cm.text = "m"
                 mainText.text = inputNumber.times(100).toString()
             }
         }
