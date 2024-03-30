@@ -13,6 +13,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if(savedInstanceState != null) {
+            num = savedInstanceState.getInt("num")
+        }
+
         binding.mainText.text = num.toString()
 
         binding.btnReset.setOnClickListener {
@@ -24,5 +28,16 @@ class MainActivity : AppCompatActivity() {
             num += 1
             binding.mainText.text = num.toString()
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt("num",num)
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        num = savedInstanceState.getInt("num",num)
+//        Log.d("num", "num")
+        super.onRestoreInstanceState(savedInstanceState)
     }
 }
