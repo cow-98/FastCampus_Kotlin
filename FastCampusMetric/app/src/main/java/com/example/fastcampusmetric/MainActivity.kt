@@ -8,6 +8,7 @@ import java.lang.NumberFormatException
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    var change : Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val btn = binding.mainBtn
 
         var inputNumber : Int = 0
-        var change : Boolean = true
+
 
         mainEdt.addTextChangedListener {text ->
             inputNumber = if(text.isNullOrEmpty()) {
@@ -50,5 +51,17 @@ class MainActivity : AppCompatActivity() {
                 mainText.text = inputNumber.times(100).toString()
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putBoolean("change", change)
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        change = savedInstanceState.getBoolean("change")
+        binding.cm.text = if(change) "cm" else "m"
+        binding.m.text = if(change) "m" else "cm"
+        super.onRestoreInstanceState(savedInstanceState)
     }
 }
