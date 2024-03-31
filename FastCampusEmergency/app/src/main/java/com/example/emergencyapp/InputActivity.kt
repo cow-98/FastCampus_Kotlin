@@ -68,10 +68,10 @@ class InputActivity : AppCompatActivity() {
     private fun getBloodType(): String {
        val bloodAlphabet = binding.bloodTypeSpinner.selectedItem.toString()
         val bloodSign = if(binding.bloodTypePlus.isChecked) "+" else "-"
-       return "$bloodAlphabet,$bloodSign"
+       return "$bloodAlphabet$bloodSign"
     }
 
     private fun caution():String {
-      return if(binding.cautionCheckBox.isChecked) binding.mainCaution.text.toString() else ""
+      return if(binding.cautionCheckBox.isChecked) binding.edtCautionValue.text.toString() else ""
     }
 }

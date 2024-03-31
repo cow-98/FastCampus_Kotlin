@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.core.view.isVisible
 import com.example.emergencyapp.databinding.ActivityMainBinding
 
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnEdit.setOnClickListener {
             val intent = Intent(this, InputActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.btnDelete.setOnClickListener {
+            deleteData()
         }
 
     }
@@ -36,11 +41,21 @@ class MainActivity : AppCompatActivity() {
             val caution = getString(Caution, "")
 
             binding.mainCaution.isVisible = caution.isNullOrEmpty().not()
-            binding.cautionValue.isVisible = !caution.isNullOrEmpty().not()
+            binding.cautionValue.isVisible = caution.isNullOrEmpty().not()
             if (!caution.isNullOrEmpty()) {
                 binding.mainCaution.text = caution
             }
         }
+    }
+
+    private fun deleteData() {
+        with(getSharedPreferences(UserInformation, MODE_PRIVATE).edit()) {
+            clear()
+            apply()
+            getDateUiUpdate()
+        }
+
+        Toast.makeText(this, "초기화", Toast.LENGTH_SHORT).show()
     }
 
 }
