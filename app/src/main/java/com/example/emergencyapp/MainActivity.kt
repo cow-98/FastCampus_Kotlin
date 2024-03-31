@@ -14,11 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnEdit.setOnClickListener {
-            Log.d("click","ok")
             val intent = Intent(this,InputActivity::class.java)
-            intent.putExtra("intent","응급의료정보")
             startActivity(intent)
-            Log.e("error", "error")
         }
     }
 
