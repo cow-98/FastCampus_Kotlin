@@ -2,6 +2,7 @@ package com.example.emergencyapp
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -25,6 +26,14 @@ class MainActivity : AppCompatActivity() {
             deleteData()
         }
 
+        binding.emergencyContactlayer.setOnClickListener {
+            with(Intent(Intent.ACTION_VIEW)) {
+                val phoneNumber = binding.callValue.text.toString()
+                    .replace("-", "")
+                data = Uri.parse("tel:$phoneNumber")
+                startActivity(this)
+            }
+        }
     }
 
     override fun onResume() {

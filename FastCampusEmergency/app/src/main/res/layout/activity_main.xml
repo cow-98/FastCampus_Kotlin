@@ -79,11 +79,19 @@
         style="@style/Value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:text="010-1234-5678"
         app:layout_constraintBaseline_toBaselineOf="@id/main_call"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/main_guideLine"
         app:layout_constraintTop_toBottomOf="@id/bloodValue" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_call"
+        app:layout_constraintBottom_toBottomOf="@id/callValue"
+        app:layout_constraintEnd_toEndOf="@id/nameValue"
+        app:layout_constraintTop_toTopOf="@id/callValue" />
 
     <TextView
         android:id="@+id/main_caution"
@@ -131,6 +139,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/emergencyContactlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="callValue"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
