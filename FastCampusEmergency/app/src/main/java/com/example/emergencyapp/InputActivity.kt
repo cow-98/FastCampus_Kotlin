@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.example.emergencyapp.databinding.ActivityMainBinding
 import com.example.emergencyapp.databinding.InputActivityBinding
 
 class InputActivity : AppCompatActivity() {
