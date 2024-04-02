@@ -66,5 +66,4 @@ class MainActivity : AppCompatActivity() {
 
         Toast.makeText(this, "초기화", Toast.LENGTH_SHORT).show()
     }
-
 }
