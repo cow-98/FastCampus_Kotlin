@@ -7,6 +7,31 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/text_equation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="equation"
+        android:gravity="end"
+        android:textSize="30sp"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/text_result"/>
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="result"
+        android:textSize="36sp"
+        android:gravity="end"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/keyPadFlow"/>
+
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/keyPadFlow"
         android:layout_width="0dp"
@@ -27,6 +52,7 @@
         android:id="@+id/btn1"
         style="@style/numberKeypad"
         android:text="1"
+        android:onClick="numberClicked"
         tools:ignore="MissingConstraints" />
 
     <Button
