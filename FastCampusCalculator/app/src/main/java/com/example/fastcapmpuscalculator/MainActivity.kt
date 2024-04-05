@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private val firstNumberText = StringBuilder("")
     private val secondNumberText = StringBuilder("")
     private val operatorText = StringBuilder("")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -27,8 +28,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-       fun numberClicked(view: View) {
+        fun numberClicked(view: View) {
 
-       }
+        }
     }
 }
