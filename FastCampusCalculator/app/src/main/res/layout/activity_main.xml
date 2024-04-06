@@ -121,12 +121,14 @@
         android:id="@+id/btn_clear"
         style="@style/operatorKeypad"
         android:text="C"
+        android:onClick="clearClicked"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_plus"
         style="@style/operatorKeypad"
         android:text="+"
+        android:onClick="operatorClicked"
         tools:ignore="MissingConstraints" />
 
     <Button
